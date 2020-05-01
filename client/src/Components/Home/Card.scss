@@ -1,0 +1,10 @@
+.card-wrapper {
+	margin: 80px;
+	
+	&__item {
+		.card-img-top,
+		.card-img-bottom {
+			min-height: 300px;
+		}
+	}
+}

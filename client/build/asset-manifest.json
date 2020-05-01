@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/react-site/static/css/main.06a6eca1.chunk.css",
+    "main.js": "/react-site/static/js/main.37197c6c.chunk.js",
+    "main.js.map": "/react-site/static/js/main.37197c6c.chunk.js.map",
+    "runtime-main.js": "/react-site/static/js/runtime-main.14f108d8.js",
+    "runtime-main.js.map": "/react-site/static/js/runtime-main.14f108d8.js.map",
+    "static/js/2.5dd03ae8.chunk.js": "/react-site/static/js/2.5dd03ae8.chunk.js",
+    "static/js/2.5dd03ae8.chunk.js.map": "/react-site/static/js/2.5dd03ae8.chunk.js.map",
+    "index.html": "/react-site/index.html",
+    "precache-manifest.89a22ba28495338dac98faf7c1805570.js": "/react-site/precache-manifest.89a22ba28495338dac98faf7c1805570.js",
+    "service-worker.js": "/react-site/service-worker.js",
+    "static/css/main.06a6eca1.chunk.css.map": "/react-site/static/css/main.06a6eca1.chunk.css.map",
+    "static/js/2.5dd03ae8.chunk.js.LICENSE.txt": "/react-site/static/js/2.5dd03ae8.chunk.js.LICENSE.txt",
+    "static/media/feat1.jpg": "/react-site/static/media/feat1.479c23b4.jpg",
+    "static/media/feat2.jpg": "/react-site/static/media/feat2.170c7e3a.jpg",
+    "static/media/feat3.jpg": "/react-site/static/media/feat3.1fc6f6bb.jpg",
+    "static/media/slide1.jpg": "/react-site/static/media/slide1.87b93cee.jpg",
+    "static/media/slide2.jpg": "/react-site/static/media/slide2.3257a873.jpg",
+    "static/media/slide3.jpg": "/react-site/static/media/slide3.68623113.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.14f108d8.js",
+    "static/js/2.5dd03ae8.chunk.js",
+    "static/css/main.06a6eca1.chunk.css",
+    "static/js/main.37197c6c.chunk.js"
+  ]
+}

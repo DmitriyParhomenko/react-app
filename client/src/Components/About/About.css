@@ -1,0 +1,25 @@
+.form-comment {
+  margin: 40px auto;
+}
+.form-comment__item {
+  margin: 30px 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 12px;
+}
+.form-comment__item_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-comment__item_title h4 {
+  margin-bottom: 10px;
+}
+.form-comment__item_title_time {
+  font-size: 12px;
+}
+.form-comment__item p {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=About.css.map */

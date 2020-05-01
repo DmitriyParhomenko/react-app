@@ -1,0 +1,9 @@
+.card-wrapper {
+  margin: 80px;
+}
+.card-wrapper__item .card-img-top,
+.card-wrapper__item .card-img-bottom {
+  min-height: 300px;
+}
+
+/*# sourceMappingURL=Card.css.map */
