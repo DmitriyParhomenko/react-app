@@ -4,7 +4,7 @@ class Tracker extends Component {
     render() {
         return (
             <div>
-                Tracker
+                Tracker new
             </div>
         );
     }
