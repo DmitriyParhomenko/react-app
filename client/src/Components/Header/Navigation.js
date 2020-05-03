@@ -15,10 +15,13 @@ class Navigation extends Component {
                         <Link className="nav-link" to="/about">About us</Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Link className="nav-link" to="/contacts">Contacts</Link>
+                        <Link className="nav-link" to="/blog">Blog</Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Link className="nav-link" to="/blog">Blog</Link>
+                        <Link className="nav-link" to="/tracker">Tracker</Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Link className="nav-link" to="/contacts">Contacts</Link>
                     </Nav.Item>
                 </Navbar.Nav>
 
