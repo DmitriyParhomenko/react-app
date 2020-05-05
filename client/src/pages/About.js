@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import FormComment from "../Components/About/FormComment";
+import React, { Component } from 'react';
+import FormComment from '../Components/About/FormComment';
 
 class About extends Component {
-    render() {
-        return (
-            <div>
-                <FormComment />
-            </div>
-        );
-    }
+	render() {
+		return (
+			<div>
+				<FormComment />
+			</div>
+		);
+	}
 }
 
 export default About;
