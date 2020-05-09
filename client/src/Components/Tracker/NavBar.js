@@ -1,23 +1,16 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {Container, Navbar} from 'bootstrap-4-react';
+import NavigationTracker from './NavBar/NavigationTracker';
+
 
 class NavBar extends Component {
 	render() {
 		return (
-			<nav>
-				<Link to="/exercises">ExcerTracker</Link>
-				<ul>
-					<li>
-						<Link to="/exercises">exercises</Link>
-					</li>
-					<li>
-						<Link to="/create">Create Exercises Log</Link>
-					</li>
-					<li>
-						<Link to="/user">Create User</Link>
-					</li>
-				</ul>
-			</nav>
+			<Navbar sticky="top" expand="lg" light bg="light">
+				<Container>
+					<NavigationTracker />
+				</Container>
+			</Navbar>
 		);
 	}
 }

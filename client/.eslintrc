@@ -23,7 +23,7 @@
     }
   },
   "rules": {
-    "max-len": [1,1200,2,{"ignoreComments": true}],
+    "max-len": [1,1200,4,{"ignoreComments": true}],
     "no-console":[1],
     "no-unused-vars":[1],
     "react/jsx-uses-vars": [2],
