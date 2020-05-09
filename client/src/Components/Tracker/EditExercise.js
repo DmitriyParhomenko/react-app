@@ -13,7 +13,8 @@ class EditExercise extends Component {
 	};
 
 	componentDidMount() {
-		axios.get('http://localhost:5000/exercises/' + this.props.match.params.id)
+		const url = process.env.SITE_URI || 'http://localhost:5000';
+		axios.get(url + '/exercises/' + this.props.match.params.id)
 			.then(response => {
 				this.setState({
 					username: response.data.username,
@@ -26,7 +27,7 @@ class EditExercise extends Component {
 				console.log(error);
 			});
 
-		axios.get('http://localhost:5000/users')
+		axios.get(url + '/users')
 			.then(response => {
 				if (response.data.length > 0) {
 					this.setState({
@@ -73,7 +74,9 @@ class EditExercise extends Component {
 
 		console.log(exercise);
 
-		axios.post('http://localhost:5000/exercises/update/' + this.props.match.params.id, exercise)
+		const url = process.env.SITE_URI || 'http://localhost:5000';
+
+		axios.post(url + '/exercises/update/' + this.props.match.params.id, exercise)
 			.then(res => console.log(res.data));
 
 		this.setState({

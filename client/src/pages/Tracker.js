@@ -8,18 +8,18 @@ import CreateExercise from '../Components/Tracker/CreateExercise';
 import CreateUser from '../Components/Tracker/CreateUser';
 
 class Tracker extends Component {
-  render() {
-    return (
-      <Router>
-        <NavBar />
-        <br />
-        <Route path="/exercises" exact component={ExercisesList} />
-        <Route path="/edit/:id" component={EditExercise} />
-        <Route path="/create" component={CreateExercise} />
-        <Route path="/user" component={CreateUser} />
-      </Router>
-    );
-  }
+	render() {
+		return (
+			<Router>
+				<NavBar />
+				<br />
+				<Route path="/exercises" exact component={ExercisesList} />
+				<Route path="/edit/:id" component={EditExercise} />
+				<Route path="/create" component={CreateExercise} />
+				<Route path="/user" component={CreateUser} />
+			</Router>
+		);
+	}
 }
 
 export default Tracker;

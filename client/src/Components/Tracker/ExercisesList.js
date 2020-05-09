@@ -31,7 +31,8 @@ class ExercisesList extends Component {
 	};
 
 	componentDidMount() {
-		axios.get('http://localhost:5000/exercises/')
+		const url = process.env.SITE_URI || 'http://localhost:5000';
+		axios.get(url + '/exercises/')
 			.then(response => {
 				this.setState({
 					exercises: response.data
@@ -43,7 +44,8 @@ class ExercisesList extends Component {
 	}
 
 	deleteExercise = id => {
-		axios.delete('http://localhost:5000/exercises/' + id)
+		const url = process.env.SITE_URI || 'http://localhost:5000';
+		axios.delete(url + '/exercises/' + id)
 			.then(res => console.log(res.data));
 
 		this.setState({

@@ -19,9 +19,11 @@ class CreateUser extends Component {
 			username: this.state.username,
 		};
 
+		const url = process.env.SITE_URI || 'http://localhost:5000';
+
 		console.log(user);
 
-		axios.post('http://localhost:5000/users/add', user)
+		axios.post(url + '/users/add', user)
 			.then(res => console.log(res.data));
 
 		this.setState({

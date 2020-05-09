@@ -13,7 +13,8 @@ class CreateExercise extends Component {
 		};
 
 		componentDidMount() {
-			axios.get('http://localhost:5000/users')
+			const url = process.env.SITE_URI || 'http://localhost:5000';
+			axios.get(url + '/users')
 				.then(response => {
 					if (response.data.length > 0) {
 						this.setState({
@@ -60,7 +61,9 @@ class CreateExercise extends Component {
 
 			console.log(exercise);
 
-			axios.post('http://localhost:5000/exercises/add', exercise)
+			const url = process.env.SITE_URI || 'http://localhost:5000';
+
+			axios.post(url + '/exercises/add', exercise)
 				.then(res => console.log(res.data));
 
 			this.setState({
