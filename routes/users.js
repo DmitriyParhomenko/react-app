@@ -1,6 +1,8 @@
 const router = require('express').Router();
 let User = require('../models/user.model');
 
+console.log(process.env.SITE_URI);
+
 router.route('/').get((req, res) => {
     User.find()
         .then(users => res.json(users))
