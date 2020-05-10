@@ -21,11 +21,11 @@ class CreateUser extends Component {
 			username: this.state.username,
 		};
 
-		const url = 'https://react-first-site.herokuapp.com' || 'http://localhost:5000';
+		const url = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 		console.log(user);
 		console.log(url);
-		console.log(process.env.SITE_URI);
+		console.log(process.env.REACT_APP_API_URL);
 
 		axios.post(url + '/users/add', user)
 			.then(res => console.log(res.data));
