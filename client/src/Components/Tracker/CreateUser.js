@@ -22,6 +22,7 @@ class CreateUser extends Component {
 		const url = process.env.SITE_URI || 'http://localhost:5000';
 
 		console.log(user);
+		console.log(url);
 
 		axios.post(url + '/users/add', user)
 			.then(res => console.log(res.data));
