@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+require('dotenv').config();
+
 class CreateUser extends Component {
 	state = {
 		username: '',
@@ -23,6 +25,7 @@ class CreateUser extends Component {
 
 		console.log(user);
 		console.log(url);
+		console.log(process.env.SITE_URI);
 
 		axios.post(url + '/users/add', user)
 			.then(res => console.log(res.data));
