@@ -21,7 +21,7 @@ class CreateUser extends Component {
 			username: this.state.username,
 		};
 
-		const url = process.env.SITE_URI || 'http://localhost:5000';
+		const url = 'https://react-first-site.herokuapp.com' || 'http://localhost:5000';
 
 		console.log(user);
 		console.log(url);
