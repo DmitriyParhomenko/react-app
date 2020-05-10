@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {Button, Col, Container, Form, Row} from 'bootstrap-4-react';
 
 class CreateUser extends Component {
 	state = {
@@ -22,8 +23,6 @@ class CreateUser extends Component {
 		const url = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 		console.log(user);
-		console.log(url);
-		console.log(process.env.REACT_APP_API_URL);
 
 		axios.post(url + '/users/add', user)
 			.then(res => console.log(res.data));
@@ -35,28 +34,27 @@ class CreateUser extends Component {
 
 	render() {
 		return (
-			<div>
-				<h3>Create New User</h3>
-				<form onSubmit={this.onSubmit}>
-					<div className="from-group">
-						<label>Username: </label>
-						<input
-							type="text"
-							required
-							className="form-control"
-							value={this.state.username}
-							onChange={this.onChangeUsername}
-						/>
-					</div>
-					<div className="form-group">
-						<input
-							type="submit"
-							value="Create User"
-							className="btn btn-ptimary"
-						/>
-					</div>
-				</form>
-			</div>
+			<Container className="form-comment">
+				<Row justifyContent="sm-center">
+					<Col sm="6">
+						<h3>Create New User</h3>
+						<Form onSubmit={this.onSubmit}>
+							<Form.Group>
+								<label htmlFor="title-new-user">Username:</label>
+								<Form.Input
+									id="title-new-user"
+									type="text"
+									required
+									className="form-control"
+									value={this.state.username}
+									onChange={this.onChangeUsername}
+								/>
+							</Form.Group>
+							<Button outline dark my="2 sm-0">Create User</Button>
+						</Form>
+					</Col>
+				</Row>
+			</Container>
 		);
 	}
 }
