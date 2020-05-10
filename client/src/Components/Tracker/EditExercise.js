@@ -13,7 +13,7 @@ class EditExercise extends Component {
 	};
 
 	componentDidMount() {
-		const url = process.env.SITE_URI || 'http://localhost:5000';
+		const url = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 		axios.get(url + '/exercises/' + this.props.match.params.id)
 			.then(response => {
 				this.setState({
@@ -74,7 +74,7 @@ class EditExercise extends Component {
 
 		console.log(exercise);
 
-		const url = process.env.SITE_URI || 'http://localhost:5000';
+		const url = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 		axios.post(url + '/exercises/update/' + this.props.match.params.id, exercise)
 			.then(res => console.log(res.data));

@@ -13,7 +13,7 @@ class CreateExercise extends Component {
 		};
 
 		componentDidMount() {
-			const url = process.env.SITE_URI || 'http://localhost:5000';
+			const url = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 			axios.get(url + '/users')
 				.then(response => {
 					if (response.data.length > 0) {
@@ -61,7 +61,7 @@ class CreateExercise extends Component {
 
 			console.log(exercise);
 
-			const url = process.env.SITE_URI || 'http://localhost:5000';
+			const url = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
 			axios.post(url + '/exercises/add', exercise)
 				.then(res => console.log(res.data));
