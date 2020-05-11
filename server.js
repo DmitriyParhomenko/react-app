@@ -24,9 +24,8 @@ const usersRouter = require('./routes/users');
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 
-if (process.env.NODE_ENV === 'production') {
-	// Exprees will serve up production assets
-	app.use(express.static('client/build'));
+if (process.env.NODE_ENV === 'prodaction') {
+    app.use(express.static('client/build'));
 
 	// Express serve up index.html file if it doesn't recognize route
 	const path = require('path');
