@@ -8,13 +8,13 @@ class NavigationTracker extends Component {
 			<div>
 				<Navbar.Nav mr="auto">
 					<Nav.Item>
-						<Link className="nav-link" to="/exercises">ExcerTracker</Link>
+						<Link className="nav-link" to="/tracker/exercises">ExcerTracker</Link>
 					</Nav.Item>
 					<Nav.Item>
-						<Link className="nav-link" to="/create">Create Exercises Log</Link>
+						<Link className="nav-link" to="/tracker/create">Create Exercises Log</Link>
 					</Nav.Item>
 					<Nav.Item>
-						<Link className="nav-link" to="/user">Create User</Link>
+						<Link className="nav-link" to="/tracker/user">Create User</Link>
 					</Nav.Item>
 				</Navbar.Nav>
 			</div>
