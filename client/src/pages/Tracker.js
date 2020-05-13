@@ -23,15 +23,13 @@ class Tracker extends Component {
 						<Route path="/tracker/exercises">
 							<ExercisesList />
 						</Route>
-						<Route path="/tracker/edit/:id">
-							<EditExercise />
-						</Route>
 						<Route path="/tracker/create">
 							<CreateExercise />
 						</Route>
 						<Route path="/tracker/user">
 							<CreateUser />
 						</Route>
+						<Route path="/tracker/edit/:id" component={EditExercise} />
 					</Switch>
 				</Router>
 			</div>
