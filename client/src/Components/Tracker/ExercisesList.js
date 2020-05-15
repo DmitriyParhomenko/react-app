@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import {Button, Col, Container, Row} from 'bootstrap-4-react';
 
 const Exercise = props => {
 	return (
@@ -12,9 +13,9 @@ const Exercise = props => {
 			<td>{props.exercise.date.substring(0, 10)}</td>
 			<td>
 				<Link to={'/tracker/edit/' + props.exercise._id}> edit </Link> |
-				<button onClick={() => {
+				<Button outline dark my="2 sm-0" onClick={() => {
 					props.deleteExercise(props.exercise._id);
-				}}>delete</button>
+				}}>delete</Button>
 			</td>
 		</tr>
 	);
@@ -65,23 +66,27 @@ class ExercisesList extends Component {
 
 	render() {
 		return (
-			<div>
-				<h3>Logged Exercises</h3>
-				<table className="tabel">
-					<thead className="thead-light">
-						<tr>
-							<th>Username</th>
-							<th>Description</th>
-							<th>Duration</th>
-							<th>Date</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						 { this.exerciseList() }
-					</tbody>
-				</table>
-			</div>
+			<Container>
+				<Row justifyContent="sm-center">
+					<Col sm="6">
+						<h3>Logged Exercises</h3>
+						<table className="tabel">
+							<thead className="thead-light">
+								<tr>
+									<th>Username</th>
+									<th>Description</th>
+									<th>Duration</th>
+									<th>Date</th>
+									<th>Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								{ this.exerciseList() }
+							</tbody>
+						</table>
+					</Col>
+				</Row>
+			</Container>
 		);
 	}
 }

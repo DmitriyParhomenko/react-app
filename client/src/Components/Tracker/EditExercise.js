@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
+import {Button, Col, Container, Form, Row} from 'bootstrap-4-react';
 
 class EditExercise extends Component {
 	state = {
@@ -87,66 +88,65 @@ class EditExercise extends Component {
 
 	render() {
 		return (
-			<div>
-				<h3>Edit New Exercise Log</h3>
-				<form onSubmit={this.onSubmit}>
-					<div className="from-group">
-						<label>Username: </label>
-						<select ref="userInput"
-							required
-							className="form-control"
-							value={this.state.username}
-							onChange={this.onChangeUsername}>
-							{
-								this.state.users.map(function (user) {
-									return <option
-										key={user}
-										value={user}>
-										{user}
-									</option>;
-								})
-							}
-						</select>
-					</div>
-					<div className="from-group">
-						<label>Description: </label>
-						<input
-							type="text"
-							required
-							className="form-control"
-							value={this.state.description}
-							onChange={this.onChangeDescription}
-						/>
-					</div>
-					<div className="from-group">
-						<label>Duration (in minutes): </label>
-						<input
-							type="text"
-							required
-							className="form-control"
-							value={this.state.duration}
-							onChange={this.onChangeDuration}
-						/>
-					</div>
-					<div className="from-group">
-						<label>Date: </label>
-						<div>
-							<DatePicker
-								selected={this.state.date}
-								onChange={this.onChangeDate}
-							/>
-						</div>
-					</div>
-
-					<div className="form-group">
-						<input
-							type="submit"
-							value="Edit Exercise Log"
-							className="btn btn-ptimary"
-						/>
-					</div>
-				</form>
-			</div>
+			<Container className="form-comment">
+				<Row justifyContent="sm-center">
+					<Col sm="6">
+						<h3>Edit New Exercise Log</h3>
+						<Form onSubmit={this.onSubmit}>
+							<Form.Group>
+								<label>Username: </label>
+								<select ref="userInput"
+									required
+									className="form-control"
+									value={this.state.username}
+									onChange={this.onChangeUsername}>
+									{
+										this.state.users.map(function (user) {
+											return <option
+												key={user}
+												value={user}>
+												{user}
+											</option>;
+										})
+									}
+								</select>
+							</Form.Group>
+							<Form.Group>
+								<label htmlFor="title-new-descr">Description:</label>
+								<Form.Input
+									id="title-new-descr"
+									type="text"
+									required
+									className="form-control"
+									value={this.state.description}
+									onChange={this.onChangeDescription}
+								/>
+							</Form.Group>
+							<Form.Group>
+								<label htmlFor="title-edit-time">Duration (in minutes):</label>
+								<Form.Input
+									id="title-edit-time"
+									type="text"
+									required
+									className="form-control"
+									value={this.state.duration}
+									onChange={this.onChangeDuration}
+								/>
+							</Form.Group>
+							<Form.Group>
+								<label>Date: </label>
+								<div>
+									<DatePicker
+										selected={this.state.date}
+										onChange={this.onChangeDate}
+									/>
+								</div>
+							</Form.Group>
+							<Button outline dark my="2 sm-0">Edit Exercise Log</Button>
+						</Form>
+					</Col>
+				</Row>
+			</Container>
 		);
 	}
 }
