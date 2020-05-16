@@ -1,13 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Article = ({ title, text, time }) => (
+const Article = ({ username, description }) => (
 	<div className="form-comment__item">
 		<div className="form-comment__item_title">
-			<h4>{title || 'No name'}</h4>
-			<div className="form-comment__item_title_time">{ time }</div>
+			<h4>{username || 'No name'}</h4>
+			<div className="form-comment__item_title_time">{ new Date().toLocaleString() }</div>
 		</div>
-		<p>{text || 'No description'}</p>
+		<p>{description || 'No description'}</p>
 	</div>
 );
+
+Article.propTypes = {
+	username: PropTypes.string,
+	description: PropTypes.string,
+};
 
 export default Article;

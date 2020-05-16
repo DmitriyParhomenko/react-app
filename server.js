@@ -20,9 +20,11 @@ connection.once('open', () => {
 
 const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
+const aboutsRouter = require('./routes/abouts');
 
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
+app.use('/abouts', aboutsRouter);
 
 if (process.env.NODE_ENV === 'prodaction') {
     app.use(express.static('client/build'));

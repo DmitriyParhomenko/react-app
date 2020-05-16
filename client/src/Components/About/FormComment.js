@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Container, Row, Col, Form, Button} from 'bootstrap-4-react';
 import './About.scss';
 import Article from './Comment';
-
+import axios from 'axios';
 
 class FormComment extends Component {
     static emptyArticle = {
@@ -15,21 +15,47 @@ class FormComment extends Component {
     	newArticle: { ...FormComment.emptyArticle }
     };
 
+    componentDidMount() {
+    	const url = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+    	axios.get(url + '/abouts/')
+    		.then(response => {
+    			console.log(response.data);
+    			this.setState({
+    				articles: response.data
+    			});
+    		})
+    		.catch(erorr => {
+    			console.log(erorr);
+    		});
+    }
+
     handleCreateArticle = e => {
     	e.preventDefault();
     	const { articles, newArticle } = this.state;
 
-    	this.setState({
-    		newArticle: { ...FormComment.emptyArticle },
-    		articles: [
-    			...articles,
-    			{
-    				...newArticle,
-    				id: +new Date(),
-    				time: new Date().toLocaleString(),
-    			}
-    		]
-    	});
+    	const abouts = {
+    		username: this.state.newArticle.title,
+    		description: this.state.newArticle.text,
+    	};
+
+    	console.log(abouts);
+
+    	const url = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+    	axios.post(url + '/abouts/add', abouts)
+    		.then(res => {
+    			console.log(res.data);
+    			this.setState({
+    				newArticle: { ...FormComment.emptyArticle },
+    				articles: [
+    					...articles,
+    					{
+    						...newArticle,
+    					}
+    				]
+    			});
+    		});
     };
 
     handleChangeNewArticle = name => ({ target }) => {
@@ -43,11 +69,19 @@ class FormComment extends Component {
     	});
     };
 
-    render() {
-    	const { articles, newArticle: {title, text} } = this.state;
+		articlesList = () => {
+			return this.state.articles.map(currentArticle => {
+				return <Article
+					key={currentArticle._id}
+					{...currentArticle}
+				/>;
+			}).reverse();
+		};
+
+		render() {
+    	const { newArticle: {title, text} } = this.state;
 
     	return (
-
     		<Container className="form-comment">
     			<Row justifyContent="sm-center">
     				<Col sm="6">
@@ -73,12 +107,12 @@ class FormComment extends Component {
     						</Form.Group>
     						<Button outline dark my="2 sm-0">Send</Button>
     					</Form>
-    					{articles.map(article => <Article key={article.id} {...article} />).reverse()}
+							{this.articlesList()}
     				</Col>
     			</Row>
     		</Container>
     	);
-    }
+		}
 }
 
 export default FormComment;
