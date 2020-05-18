@@ -55,6 +55,17 @@ class FormComment extends Component {
     					}
     				]
     			});
+
+    			axios.get(url + '/abouts/')
+    				.then(response => {
+    					console.log(response.data);
+    					this.setState({
+    						articles: response.data
+    					});
+    				})
+    				.catch(erorr => {
+    					console.log(erorr);
+    				});
     		});
     };
 
