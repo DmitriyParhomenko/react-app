@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 
@@ -9,14 +10,15 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 const uri = process.env.MONGODB_URI;
 mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 
 const connection = mongoose.connection;
 connection.once('open', () => {
-    console.log("MongoDB database connection established successfully");
-})
+	console.log('MongoDB database connection established successfully');
+});
 
 const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
@@ -27,7 +29,7 @@ app.use('/users', usersRouter);
 app.use('/abouts', aboutsRouter);
 
 if (process.env.NODE_ENV === 'prodaction') {
-    app.use(express.static('client/build'));
+	app.use(express.static('client/build'));
 
 	// Express serve up index.html file if it doesn't recognize route
 	const path = require('path');
@@ -37,5 +39,5 @@ if (process.env.NODE_ENV === 'prodaction') {
 }
 
 app.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
+	console.log(`Server is running on port: ${port}`);
 });
