@@ -28,7 +28,7 @@ const usersLoginRouter = require('./routes/userslogin');
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 app.use('/abouts', aboutsRouter);
-app.use('/users-login', usersLoginRouter);
+app.use('/user', usersLoginRouter);
 
 if (process.env.NODE_ENV === 'prodaction') {
 	app.use(express.static('client/build'));
