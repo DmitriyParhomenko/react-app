@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import AuthProvider from './Context/AuthContext';
 
 ReactDOM.render(
-	<div>
+	<AuthProvider>
 		<App />
-	</div>,
+	</AuthProvider>,
+	// eslint-disable-next-line no-undef
 	document.getElementById('root')
 );
