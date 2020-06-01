@@ -1,7 +1,7 @@
 import React, {Component, useContext} from 'react';
 import {Collapse, Nav, Navbar, Button} from 'bootstrap-4-react';
 import {Link} from 'react-router-dom';
-import AuthService from '../../Context/AuthContext';
+import AuthService from '../../Services/AuthService';
 import { AuthContext } from '../../Context/AuthContext';
 import Search from './Search';
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import NavBar from './NavBar';
 import {
 	BrowserRouter as Router,
-	Switch,
 	Route
 } from 'react-router-dom';
 
@@ -11,32 +10,22 @@ import Blog from '../../pages/Blog';
 import Contacts from '../../pages/Contacts';
 import About from '../../pages/About';
 import Tracker from '../../pages/Tracker';
+import Login from '../../pages/Login';
+import Register from '../../pages/Register';
 
 class Header extends Component {
 	render() {
 		return (
-			<div>
-				<Router>
-					<NavBar />
-					<Switch>
-						<Route path="/about">
-							<About />
-						</Route>
-						<Route path="/blog">
-							<Blog />
-						</Route>
-						<Route path="/tracker">
-							<Tracker />
-						</Route>
-						<Route path="/contacts">
-							<Contacts />
-						</Route>
-						<Route path="/">
-							<Home />
-						</Route>
-					</Switch>
-				</Router>
-			</div>
+			<Router>
+				<NavBar />
+				<Route exact path="/" component={Home} />
+				<Route path="/about" component={About} />
+				<Route path="/blog" component={Blog} />
+				<Route path="/tracker" component={Tracker} />
+				<Route path="/contacts" component={Contacts} />
+				<Route path="/login" component={Login} />
+				<Route path="/register" component={Register} />
+			</Router>
 		);
 	}
 }
