@@ -50,6 +50,7 @@ const Register = props => {
 							<label htmlFor="username">Username:</label>
 							<Form.Input
 								name="username"
+								value={user.username}
 								type="text"
 								className="form-control"
 								onChange={onChange}
@@ -60,6 +61,7 @@ const Register = props => {
 							<label htmlFor="password">Password:</label>
 							<Form.Input
 								name="password"
+								value={user.password}
 								type="password"
 								className="form-control"
 								onChange={onChange}
@@ -70,6 +72,7 @@ const Register = props => {
 							<label htmlFor="role">Role:</label>
 							<Form.Input
 								name="role"
+								value={user.role}
 								type="text"
 								className="form-control"
 								onChange={onChange}

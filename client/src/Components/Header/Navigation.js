@@ -5,7 +5,7 @@ import AuthService from '../../Services/AuthService';
 import { AuthContext } from '../../Context/AuthContext';
 import Search from './Search';
 
-const Navigation = prop => {
+const Navigation = props => {
 	const {isAuthenticated, user, setIsAuthenticated, setUser} = useContext(AuthContext);
 
 	const onClickLogoutHandler = () => {
@@ -38,7 +38,7 @@ const Navigation = prop => {
 					user.role === 'admin' ?
 						<Link className="nav-link" to="/admin">Admin</Link> : null
 				}
-				<Button outline dark my="2 sm-0" onClick={onClickLogoutHandler}>Logout</Button>
+				<Link className="nav-link" onClick={onClickLogoutHandler} to="/">Logout</Link>
 			</div>
 		);
 	};
